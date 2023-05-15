@@ -116,6 +116,12 @@ function LoginCode() {
 
     }
 
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+
+          login();
+        }
+      };
 
     const enviarcodigoWA = async (e) => {
 
@@ -332,6 +338,7 @@ function LoginCode() {
                         </div>
                         <label className='text-center my-1'>Escribe el codigo de verificación recibido:</label>
                         <input className='text-center my-1 rounded-3 border-0'
+                        onKeyPress={handleKeyPress}
                             value={DOMPurify.sanitize(codigo)}
                             onChange={e => setCodigo(DOMPurify.sanitize(e.target.value))}
                         />
