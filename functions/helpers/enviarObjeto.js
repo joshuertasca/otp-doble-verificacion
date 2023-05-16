@@ -58,6 +58,7 @@ module.exports = enviar = async (event) => {
         tipo = "registroEnvioNotificacion"
 
     } else if (fields.type == "template") {
+        urlSend = "https://apitellitwa.aldeamo.com/v1/apikey/template/bsp/send";
         tipo = "whatsapp2"
     } else if (fields.type == "template2") {
         urlSend = "https://apitellitwa.aldeamo.com/v1/apikey/template/bsp/send";
@@ -79,6 +80,7 @@ module.exports = enviar = async (event) => {
 
         // Envio codigo whatsapp a administrador
 
+        
         if (tipo == "whatsapp2") {
             const createdCourse = await fetch("https://apitellitwa.aldeamo.com/v1/apikey/template/otp/bsp/send", {
                 method: 'POST',

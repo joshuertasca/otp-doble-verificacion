@@ -139,12 +139,11 @@ function LoginCode() {
         await e.preventDefault();
 
         const numeroindicativo = opcionSeleccionada + number
-
-
-
+        var codigos = ""+codigo
+        
         try {
-
-
+            
+            
             if (isChecked==true) {
                 await fetch('/.netlify/functions/courses', {
                     method: 'POST',
@@ -165,7 +164,7 @@ function LoginCode() {
                                     "parameters": [
                                         {
                                             "type": "text",
-                                            "text": codigo
+                                            "text": codigos
                                         }
                                     ]
                                 },
@@ -176,7 +175,7 @@ function LoginCode() {
                                     "parameters": [
                                         {
                                             "type": "text",
-                                            "text": codigo
+                                            "text": codigos
                                         }
                                     ]
                                 }
@@ -187,9 +186,11 @@ function LoginCode() {
                         'Content-Type': 'application/json',
                         'token': process.env.REACT_APP_PASSWORD
                     }
-
+                    
                 });
+                
             } else {
+                console.log(codigos)
                 await fetch('/.netlify/functions/courses', {
                     method: 'POST',
                     body: JSON.stringify({
@@ -209,7 +210,7 @@ function LoginCode() {
                                     "parameters": [
                                         {
                                             "type": "text",
-                                            "text": codigo
+                                            "text": DOMPurify.sanitize(codigo)
                                         }
                                     ]
                                 },
@@ -220,7 +221,7 @@ function LoginCode() {
                                     "parameters": [
                                         {
                                             "type": "text",
-                                            "text": codigo
+                                            "text": DOMPurify.sanitize(codigo)
                                         }
                                     ]
                                 }
