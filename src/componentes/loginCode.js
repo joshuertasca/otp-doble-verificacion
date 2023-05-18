@@ -347,8 +347,11 @@ function LoginCode() {
                         <button className='btn text-center mt-4 py-2 rounded-5 bg-primary border-0' onClick={login} disabled={class1}>Entrar</button>
 
                     </div>
+
                 </div>
+                <a className='offset-lg-2 offset-md-1 col-lg-5 offset-sm-1  col-sm-9 offset-1 col-11 text-center' href='https://aldeamo-demo-otp.netlify.app/'>Login page de envio multiple</a>
             </div>
+            
 
         </div>
     );
