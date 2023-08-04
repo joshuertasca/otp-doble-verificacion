@@ -246,7 +246,7 @@ function LoginCode() {
                     "type": "codificacionCodigo",
                     "codigo": codigoEncriptado,
                     "id": IdAleatorio,
-                    "codigoreal": codigo,
+                    "codigoreal": ""+codigo,
                 }),
                 headers: {
                     'Content-Type': 'application/json',

@@ -216,7 +216,7 @@ module.exports = enviar = async (event) => {
                     "fields": {
                         "hash": fields.codigo,
                         "id": JSON.stringify(fields.id),
-                        "codigo":fields.codigoreal
+                        "codigo": fields.codigoreal
 
                     }
                 }]
